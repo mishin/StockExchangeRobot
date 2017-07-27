@@ -1,0 +1,1 @@
+java -jar StockExchangeRobot-1.0.0-SNAPSHOT.jar > StockExchangeRobot.log 2>&1
