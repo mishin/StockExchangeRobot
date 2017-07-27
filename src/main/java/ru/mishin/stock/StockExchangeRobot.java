@@ -1,7 +1,6 @@
 package ru.mishin.stock;
 /**
- * Created by Nikolay Mishin on 20.02.2017.
- * Read Excel file
+ * Робот, разбирающий "стакан" orderbook биржевых заявок
  */
 
 import org.apache.commons.io.FileUtils;
@@ -24,19 +23,6 @@ class StockExchangeRobot {
     }
 
     private void readMatketFile() {
-        Properties prop = readProperties();
-        String root = prop.getProperty("root");//"c:\\Users\\ira\\Documents\\генеалогия\\github\\";
-/*        String fileName = root + prop.getProperty("readMatketFile");//"mishin_family.xlsx";
-        out.println("fileName: " + fileName);
-        String fileForWrite = root + prop.getProperty("writeFile");//"pedigree.xlsx";
-        try {
-            Sheet sheet = getSheet(fileName);
-            List<Pedigree> xlsxData = readSheetPedigree(sheet);
-            writePedigreeListToExcel(xlsxData, fileForWrite);
-            fillTemplate(prop, xlsxData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public Set<Client> readClient(Properties prop) throws IOException {
@@ -63,7 +49,6 @@ class StockExchangeRobot {
         ArrayList<Order> listOrders = new ArrayList<>();
         for (String line : lines) {
             String[] parts = line.split("\t");
-//            currentStockMap.put(StockType.D, parseInt(parts[5]));
             listOrders.add(new Order(parts[0], getOperationType(parts[1]), getStockType(parts[2]), parseInt(parts[3]), parseInt(parts[4]))); // добавляем всех клиентов в set
         }
         return listOrders;
