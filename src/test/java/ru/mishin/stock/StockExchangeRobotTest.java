@@ -72,9 +72,6 @@ public class StockExchangeRobotTest {
     public void shouldReadOrders() throws Exception {
         StockExchangeRobot stockExchangeRobot = new StockExchangeRobot();
         ArrayList<Order> orders = stockExchangeRobot.readOrders(prop);
-        /*for (Order order : orders) {
-            System.out.println(order.toString());
-        }*/
     }
 
 
@@ -88,10 +85,7 @@ public class StockExchangeRobotTest {
                 parseInt("15"),
                 parseInt("4"));
         System.out.println(order.toString());
-//        ArrayList<Order> orders = stockExchangeRobot.readOrders(prop);
-        /*for (Order order : orders) {
-            System.out.println(order.toString());
-        }*/
+
     }
 
     @Test
@@ -99,9 +93,5 @@ public class StockExchangeRobotTest {
         StockExchangeRobot stockExchangeRobot = new StockExchangeRobot();
         ArrayList<Order> orders = stockExchangeRobot.readOrders(prop);
         Set<Client> distinctClient = stockExchangeRobot.readClient(prop);
-        for (Order order : orders) {
-//            System.out.println(order.toString());
-        }
     }
-
 }
